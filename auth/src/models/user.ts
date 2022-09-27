@@ -21,6 +21,7 @@ interface UserModel extends Model<UserDoc>{
 // An interface that describes the properties
 // that a user document has
 interface UserDoc extends Document{
+    save(): unknown;
     email: string,
     password: string
 }
