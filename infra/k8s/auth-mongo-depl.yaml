@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth-mongo
-          image: 5e1e3e106263/auth
+          image: mongo
 ---
 apiVersion: v1
 kind: Service
@@ -24,10 +24,7 @@ spec:
   selector:
     app: auth-mongo
   ports:
-    - name: auth-mongo
-      protocol: TCL
-      port: auth-mongo:6567
-      targetPort: auth-mongo:6567
-
-
-
+    - name: db
+      protocol: TCP
+      port: 27017
+      targetPort: 27017
