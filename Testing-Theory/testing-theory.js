@@ -27,4 +27,20 @@
 
     *** Docker file: RUN npm install --only=prod : through this way we can avoid downloading mongo-server-memory that 80 mb file every single time we have to rebuild our image.
 
+    *** package.json file ***
+        => "test": "jest --watchAll --no-cached"
+                "jest --watchAll":to tell it to run all the different tests inside of our project whenever any file changes.
+                "--no-cached": is related to our attempt to try to use TypeScript with jest.
+
+        
+         "jest": {
+            // installed a dependency called jest that is going to add TypeScript support for us.
+            "preset": "ts-jest",
+            "testEnvironment": "node",
+            // we are going to tell jest to run a setup file inside of our project after it initially starts everything
+            "setupFilesAfterEnv": [
+            "./src/test/setup.ts"
+            ]
+        },
+
 */
