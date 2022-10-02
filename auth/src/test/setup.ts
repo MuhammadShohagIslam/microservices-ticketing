@@ -1,3 +1,10 @@
+/*
+  mongodb-memory-server: that is the copy of MongoDB 
+  that is going to be running in memory.The reason we 
+  are running a copy of mongo in memory is that we can 
+  easily test multiple database at the same time.
+*/
+
 import { MongoMemoryServer } from "mongodb-memory-server";
 import mongoose from "mongoose";
 import request from "supertest";
